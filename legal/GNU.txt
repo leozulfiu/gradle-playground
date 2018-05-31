@@ -1,0 +1,1 @@
+This is the license file and needs to be added to the deployed artifact.

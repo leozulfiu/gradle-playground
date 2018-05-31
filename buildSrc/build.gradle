@@ -1,0 +1,15 @@
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile gradleApi()
+    }
+
+    rootProject.dependencies {
+        runtime project(path)
+    }
+}

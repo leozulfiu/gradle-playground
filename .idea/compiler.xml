@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="buildSrc_main" target="1.8" />
+      <module name="buildSrc_test" target="1.8" />
+      <module name="database_main" target="1.8" />
+      <module name="database_test" target="1.8" />
+      <module name="deployment_main" target="1.8" />
+      <module name="deployment_test" target="1.8" />
+      <module name="gradle-playground_funktionaleTests" target="1.8" />
+      <module name="gradle-playground_main" target="1.8" />
+      <module name="gradle-playground_smokeTest" target="1.8" />
+      <module name="gradle-playground_test" target="1.8" />
+      <module name="license_main" target="1.8" />
+      <module name="license_test" target="1.8" />
+      <module name="misc_main" target="1.8" />
+      <module name="misc_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
