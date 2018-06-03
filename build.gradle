@@ -60,11 +60,6 @@ task generateLicenseFiles {
     }
 }
 
-migrateDB {
-    from = 'bla'
-    to = 'mimi'
-}
-
 task deployToVega(type: DeploymentTask) {
     to = 'Vega'
 }
@@ -76,4 +71,8 @@ task deployToProd(type: DeploymentTask) {
 task mergeLicenseFiles2(type: LicenseMergerTask) {
     gnuFile = file("./legal/GNU.txt")
     mitFile = file("./legal/MIT.txt")
+}
+
+databases {
+    database = "asdf"
 }

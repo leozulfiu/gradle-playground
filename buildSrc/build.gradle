@@ -1,5 +1,9 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+
 subprojects {
-    apply plugin: 'java'
+    apply plugin: 'groovy'
 
     repositories {
         mavenCentral()
@@ -7,9 +11,10 @@ subprojects {
 
     dependencies {
         compile gradleApi()
+        compile localGroovy()
     }
+}
 
-    rootProject.dependencies {
-        runtime project(path)
-    }
+dependencies {
+    runtime subprojects.collect { project(it.path) }
 }
