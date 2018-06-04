@@ -1,4 +1,16 @@
-apply plugin: 'groovy'
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+}
+
+gradlePlugin {
+    plugins {
+        java {
+            id = 'database'
+            implementationClass = 'com.zuehlke.database.DatabasePlugin'
+        }
+    }
+}
 
 dependencies {
     testCompile 'junit:junit:4.12'
