@@ -8,7 +8,7 @@ public class RandomCatFactGeneratorTest {
 
     @Test
     public void test1() {
-        RandomCatFactGenerator generator = new RandomCatFactGenerator();
+        samples.RandomCatFactGenerator generator = new RandomCatFactGenerator();
         assertEquals(1, 1);
     }
 }

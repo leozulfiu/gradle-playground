@@ -5,8 +5,8 @@ plugins {
 gradlePlugin {
     plugins {
         java {
-            id = 'database'
-            implementationClass = 'com.leo.database.DatabasePlugin'
+            id = 'deployment'
+            implementationClass = 'com.leo.deployment.DeploymentPlugin'
         }
     }
 }

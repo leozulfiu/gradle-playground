@@ -1,4 +1,4 @@
-package com.zuehlke.deployment;
+package com.leo.deployment;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;

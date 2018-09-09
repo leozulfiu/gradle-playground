@@ -4,9 +4,6 @@ apply plugin: 'database'
 apply plugin: 'deployment'
 
 
-import com.zuehlke.license.LicenseMergerTask
-import groovy.json.JsonSlurper
-
 configurations {
     smokeTest
 }
@@ -14,15 +11,15 @@ configurations {
 sourceSets {
     main {
         java {
-            srcDirs = ['src/haupt']
+            srcDirs = ['src/mymain']
         }
         resources {
-            srcDirs = ['src/haupt']
+            srcDirs = ['src/mymain']
         }
     }
     test {
         java {
-            srcDirs = ['src/testen']
+            srcDirs = ['src/mytest']
         }
     }
     smokeTest {
@@ -40,39 +37,18 @@ dependencies {
     compile 'com.mashape.unirest:unirest-java:1.4.9'
     testCompile 'junit:junit:4.12'
     smokeTestCompile 'org.seleniumhq.selenium:selenium-java:3.12.0'
-}
-
-
-task generateLicenseFiles {
-    group = 'maintenance'
-
-    doLast {
-        def curlResponse = ['curl', "\"https://cat-fact.herokuapp.com/facts/random\""].execute()
-        def jsonContent = new JsonSlurper().parseText(curlResponse.text)
-
-        String gnu = file('./legal/GNU.txt').text
-        String mit = file('./legal/MIT.txt').text
-
-        String finalContent = gnu + mit
-        finalContent += "\n" + jsonContent
-
-        (new File("ZE_license.txt")).text = finalContent
-    }
-}
-
-task deployToVega(type: DeploymentTask) {
-    to = 'Vega'
-}
-
-task deployToProd(type: DeploymentTask) {
-    to = 'Prod'
-}
-
-task mergeLicenseFiles2(type: LicenseMergerTask) {
-    gnuFile = file("./legal/GNU.txt")
-    mitFile = file("./legal/MIT.txt")
+    smokeTestCompile 'junit:junit:4.12'
 }
 
 databases {
-    database = "asdf"
+    database = 'asdf'
 }
+
+ext.environments = ['prod', 'test', 'dev']
+
+/*
+task mergeLicenseFiles(type: LicenseMergerTask) {
+    gnuFile = file('./legal/GNU.txt')
+    mitFile = file('./legal/MIT.txt')
+}
+*/
