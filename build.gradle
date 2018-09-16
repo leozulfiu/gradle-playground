@@ -41,10 +41,34 @@ dependencies {
 }
 
 databases {
-    database = 'asdf'
+    prod {
+        url = "https://prod.database.leo.com:7381"
+        port = 1235
+    }
+    local {
+        url = "localhost:5423"
+        port = 5566
+    }
 }
 
-ext.environments = ['prod', 'test', 'dev']
+deployments {
+    prod {
+        url = "https://server323.prod.aws.com"
+        cloudProperties {
+            cpus = 8
+            ram = 1024
+            environmentVariables = './cloud/prod_environment.txt'
+        }
+    }
+    test {
+        url = "https://server01.test.aws.com"
+        cloudProperties {
+            cpus = 2
+            ram = 512
+            environmentVariables = './cloud/test_environment.txt'
+        }
+    }
+}
 
 /*
 task mergeLicenseFiles(type: LicenseMergerTask) {

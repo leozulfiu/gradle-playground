@@ -1,6 +1,18 @@
-
 subprojects {
     repositories {
         mavenCentral()
+    }
+
+    apply plugin: 'java'
+
+    dependencies {
+        compile localGroovy()
+        compile gradleApi()
+        testCompile 'junit:junit:4.12'
+        testCompile gradleTestKit()
+    }
+
+    rootProject.dependencies {
+        runtime project(path)
     }
 }

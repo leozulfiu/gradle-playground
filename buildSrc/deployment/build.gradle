@@ -1,6 +1,4 @@
-plugins {
-    id 'java-gradle-plugin'
-}
+apply plugin: "java-gradle-plugin"
 
 gradlePlugin {
     plugins {
@@ -9,13 +7,4 @@ gradlePlugin {
             implementationClass = 'com.leo.deployment.DeploymentPlugin'
         }
     }
-}
-
-dependencies {
-    compile gradleApi()
-    testCompile 'junit:junit:4.12'
-}
-
-rootProject.dependencies {
-    runtime project(path)
 }

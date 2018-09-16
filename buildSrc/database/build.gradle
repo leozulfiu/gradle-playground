@@ -1,21 +1,15 @@
-plugins {
-    id 'java-gradle-plugin'
-}
+apply plugin: "java-gradle-plugin"
 
 gradlePlugin {
     plugins {
-        java {
+        databasePlugin {
             id = 'database'
             implementationClass = 'com.leo.database.DatabasePlugin'
         }
     }
 }
-
+/*
 dependencies {
-    compile gradleApi()
-    testCompile 'junit:junit:4.12'
+    compile 'org.apache.commons:commons-text:1.4'
 }
-
-rootProject.dependencies {
-    runtime project(path)
-}
+*/

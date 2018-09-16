@@ -2,9 +2,6 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'java'
-
 dependencies {
-    compile gradleApi()
     compile 'com.google.guava:guava:26.0-jre'
 }
